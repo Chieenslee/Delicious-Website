@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Hàng Delicious - Trang Chủ</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Animate.css cho hiệu ứng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .menu-item {
+            transition: transform 0.3s;
+            opacity: 1;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: none;
+        }
+        
+        .menu-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .menu-item .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            width: 100%;
+        }
+        
+        .menu-item:hover .card-img-top {
+            transform: scale(1.1);
+        }
+        
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            height: 100%;
+        }
+        
+        .animate__fadeInUp {
+            opacity: 1;
+            animation-duration: 1s;
+        }
+        
+        footer {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .menu-item .card-img-top {
+                height: 180px;
+            }
+            
+            .about-img {
+                height: 300px;
+            }
+            
+            .hero-section {
+                height: 60vh;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .menu-item .card-img-top {
+                height: 160px;
+            }
+            
+            .about-img {
+                height: 250px;
+            }
+            
+            .hero-section {
+                height: 50vh;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Logo" height="40">
+                Delicious
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Thực Đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Thư Viện Ảnh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="events.html">Sự Kiện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="ms-3">
+                    <a href="#reservation" class="btn btn-primary">Đặt Bàn</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold animate__animated animate__fadeInDown">Nhà Hàng Delicious</h1>
+            <p class="lead animate__animated animate__fadeInUp">Trải nghiệm ẩm thực tuyệt vời với những món ăn đặc sắc</p>
+            <a href="menu.html" class="btn btn-primary btn-lg mt-3 animate__animated animate__fadeInUp">Xem Thực Đơn</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="fw-bold mb-4">Chào mừng đến với Delicious</h2>
+                    <p class="lead">Nhà hàng chúng tôi tự hào mang đến những trải nghiệm ẩm thực tuyệt vời nhất cho quý khách.</p>
+                    <p>Với đội ngũ đầu bếp tài năng và không gian sang trọng, Delicious là điểm đến lý tưởng cho những bữa ăn gia đình, gặp gỡ bạn bè hay các sự kiện đặc biệt.</p>
+                    <a href="about.html" class="btn btn-outline-dark mt-3">Tìm hiểu thêm</a>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Về chúng tôi" class="about-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Món Ăn Nổi Bật</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card h-100 menu-item">
+                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="card-img-top" alt="Bò lúc lắc">
+                        <div class="card-body">
+                            <h5 class="card-title">Bò Lúc Lắc</h5>
+                            <p class="card-text">Thịt bò thượng hạng xào với ớt chuông và hành tây, ăn kèm với cơm trắng và salad.</p>
+                            <p class="text-primary fw-bold">220.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card h-100 menu-item">
+                        <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="card-img-top" alt="Gỏi cuốn">
+                        <div class="card-body">
+                            <h5 class="card-title">Gỏi Cuốn Tôm Thịt</h5>
+                            <p class="card-text">Gỏi cuốn tươi mát với tôm, thịt heo, bún, rau sống và các loại rau thơm.</p>
+                            <p class="text-primary fw-bold">85.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="card h-100 menu-item">
+                        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="card-img-top" alt="Gà nướng">
+                        <div class="card-body">
+                            <h5 class="card-title">Gà Nướng Mật Ong</h5>
+                            <p class="card-text">Gà nướng thơm ngon với lớp mật ong bên ngoài, ăn kèm với rau sống.</p>
+                            <p class="text-primary fw-bold">195.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card h-100 menu-item">
+                        <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="card-img-top" alt="Cá hồi">
+                        <div class="card-body">
+                            <h5 class="card-title">Cá Hồi Nướng Teriyaki</h5>
+                            <p class="card-text">Cá hồi tươi nướng với sốt Teriyaki, ăn kèm với rau củ xào và cơm trắng.</p>
+                            <p class="text-primary fw-bold">250.000 VNĐ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <a href="menu.html" class="btn btn-primary" aria-label="Xem toàn bộ thực đơn">Xem Toàn Bộ Thực Đơn</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow" data-aos="fade-up">
+                        <div class="card-body p-5">
+                            <h2 class="text-center fw-bold mb-4">Đặt Bàn</h2>
+                            <form id="reservationForm">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Họ và tên</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Số điện thoại</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="date" class="form-label">Ngày</label>
+                                        <input type="date" class="form-control" id="date" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="time" class="form-label">Giờ</label>
+                                        <input type="time" class="form-control" id="time" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="guests" class="form-label">Số người</label>
+                                        <select class="form-select" id="guests" required>
+                                            <option value="">Chọn số người</option>
+                                            <option value="1">1 người</option>
+                                            <option value="2">2 người</option>
+                                            <option value="3">3 người</option>
+                                            <option value="4">4 người</option>
+                                            <option value="5">5 người</option>
+                                            <option value="6">6 người trở lên</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Ghi chú</label>
+                                        <textarea class="form-control" id="message" rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12 text-center mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg">Đặt Bàn Ngay</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5" data-aos="fade-up">Khách Hàng Nói Gì Về Chúng Tôi</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial h-100">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"Thức ăn ngon tuyệt vời, dịch vụ chuyên nghiệp và không gian thoải mái. Tôi sẽ quay lại nhiều lần nữa!"</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Nguyễn Văn A</h6>
+                                <small class="text-muted">Khách hàng thường xuyên</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial h-100">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"Đồ ăn tuyệt vời, đặc biệt là món đặc sản của nhà hàng. Nhân viên rất thân thiện và nhiệt tình."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Trần Thị B</h6>
+                                <small class="text-muted">Khách du lịch</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial h-100">
+                        <div class="mb-3 text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-3">"Không gian sang trọng, phù hợp cho các buổi gặp mặt gia đình và bạn bè. Giá cả hợp lý cho chất lượng món ăn."</p>
+                        <div class="d-flex align-items-center">
+                            <div class="ms-3">
+                                <h6 class="mb-0">Lê Văn C</h6>
+                                <small class="text-muted">Doanh nhân</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Nhà Hàng Delicious</h5>
+                    <p>Mang đến trải nghiệm ẩm thực tuyệt vời với những món ăn đặc sắc và dịch vụ chuyên nghiệp.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Giờ Mở Cửa</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Thứ 2 - Thứ 6: 10:00 - 22:00</li>
+                        <li class="mb-2">Thứ 7: 10:00 - 23:00</li>
+                        <li>Chủ Nhật: 10:00 - 22:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Liên Hệ</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (028) 1234 5678</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@delicious.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Nhà Hàng Delicious. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Khởi tạo AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>

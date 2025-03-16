@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhà Hàng Delicious - Sự Kiện</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Animate.css cho hiệu ứng -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS - Animate On Scroll Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.min.css">
+    <style>
+        :root {
+            --primary-color: #e74c3c;
+            --secondary-color: #2c3e50;
+            --accent-color: #f39c12;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #c0392b;
+            border-color: #c0392b;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 40vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .event-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .event-card .position-relative {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .event-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .event-card:hover img {
+            transform: scale(1.1);
+        }
+        
+        .event-date {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 1;
+        }
+        
+        .upcoming-event-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-container {
+            background-color: var(--light-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-box {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-box h3 {
+            font-size: 2rem;
+            margin: 0;
+        }
+        
+        .countdown-box p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(231, 76, 60, 0.25);
+        }
+        
+        footer {
+            background-color: var(--secondary-color) !important;
+        }
+        
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .event-card .position-relative {
+                height: 200px;
+            }
+            
+            .upcoming-event-img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .event-card .position-relative {
+                height: 180px;
+            }
+            
+            .upcoming-event-img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Logo" height="40">
+                Delicious
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Giới Thiệu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Thực Đơn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Thư Viện Ảnh</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="events.html">Sự Kiện</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Liên Hệ</a>
+                    </li>
+                </ul>
+                <div class="ms-3">
+                    <a href="index.html#reservation" class="btn btn-primary">Đặt Bàn</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Sự Kiện</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Trang Chủ</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Sự Kiện</li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Upcoming Event Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Sự Kiện Sắp Diễn Ra</h2>
+                <p class="lead">Đừng bỏ lỡ những sự kiện đặc biệt tại nhà hàng Delicious</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Sự kiện đặc biệt" class="img-fluid upcoming-event-img">
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h3 class="fw-bold mb-3">Đêm Ẩm Thực Việt Nam</h3>
+                    <p class="text-muted mb-3"><i class="far fa-calendar-alt me-2"></i> 15 Tháng 12, 2023 | <i class="far fa-clock me-2"></i> 18:00 - 22:00</p>
+                    <p>Trải nghiệm một đêm đặc biệt với những món ăn truyền thống Việt Nam được chế biến bởi đầu bếp hàng đầu. Thưởng thức âm nhạc dân tộc và khám phá văn hóa ẩm thực đặc sắc của Việt Nam.</p>
+                    
+                    <div class="countdown-container mt-4">
+                        <h4 class="mb-3">Sự kiện sẽ diễn ra sau:</h4>
+                        <div class="row" id="countdown">
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <h3 id="days">00</h3>
+                                    <p>Ngày</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <h3 id="hours">00</h3>
+                                    <p>Giờ</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <h3 id="minutes">00</h3>
+                                    <p>Phút</p>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="countdown-box">
+                                    <h3 id="seconds">00</h3>
+                                    <p>Giây</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <a href="#register" class="btn btn-primary">Đăng Ký Tham Gia</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events List Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Các Sự Kiện Khác</h2>
+                <p class="lead">Khám phá các sự kiện hấp dẫn khác tại nhà hàng Delicious</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Cooking Class" class="img-fluid">
+                            <div class="event-date">
+                                <div>20</div>
+                                <div>Th12</div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold">Lớp Học Nấu Ăn</h4>
+                            <p class="text-muted mb-3"><i class="far fa-clock me-2"></i> 10:00 - 13:00</p>
+                            <p>Học cách chế biến các món ăn đặc sắc cùng đầu bếp chuyên nghiệp của nhà hàng Delicious.</p>
+                            <a href="#register" class="btn btn-outline-primary mt-2">Đăng Ký</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Wine Tasting" class="img-fluid">
+                            <div class="event-date">
+                                <div>25</div>
+                                <div>Th12</div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold">Thưởng Thức Rượu Vang</h4>
+                            <p class="text-muted mb-3"><i class="far fa-clock me-2"></i> 19:00 - 22:00</p>
+                            <p>Khám phá hương vị của các loại rượu vang hảo hạng từ khắp nơi trên thế giới.</p>
+                            <a href="#register" class="btn btn-outline-primary mt-2">Đăng Ký</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="event-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Food Festival" class="img-fluid">
+                            <div class="event-date">
+                                <div>01</div>
+                                <div>Th01</div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <h4 class="fw-bold">Lễ Hội Ẩm Thực</h4>
+                            <p class="text-muted mb-3"><i class="far fa-clock me-2"></i> 11:00 - 22:00</p>
+                            <p>Tham gia lễ hội ẩm thực với nhiều món ăn đặc sắc và hoạt động giải trí hấp dẫn.</p>
+                            <a href="#register" class="btn btn-outline-primary mt-2">Đăng Ký</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="register" class="py-5">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="fw-bold">Đăng Ký Tham Gia</h2>
+                <p class="lead">Điền thông tin để đăng ký tham gia sự kiện</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-lg" data-aos="fade-up">
+                        <div class="card-body p-5">
+                            <form id="eventRegistrationForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Họ và tên</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Số điện thoại</label>
+                                        <input type="tel" class="form-control" id="phone" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="eventSelect" class="form-label">Chọn sự kiện</label>
+                                        <select class="form-select" id="eventSelect" required>
+                                            <option value="" selected disabled>Chọn sự kiện</option>
+                                            <option value="vietnamese-night">Đêm Ẩm Thực Việt Nam (15/12/2023)</option>
+                                            <option value="cooking-class">Lớp Học Nấu Ăn (20/12/2023)</option>
+                                            <option value="wine-tasting">Thưởng Thức Rượu Vang (25/12/2023)</option>
+                                            <option value="food-festival">Lễ Hội Ẩm Thực (01/01/2024)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="guests" class="form-label">Số lượng người tham gia</label>
+                                    <input type="number" class="form-control" id="guests" min="1" max="10" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Ghi chú</label>
+                                    <textarea class="form-control" id="message" rows="3"></textarea>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="agreeTerms" required>
+                                    <label class="form-check-label" for="agreeTerms">
+                                        Tôi đồng ý với các điều khoản và điều kiện
+                                    </label>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary btn-lg">Đăng Ký</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Nhà Hàng Delicious</h5>
+                    <p>Mang đến trải nghiệm ẩm thực tuyệt vời với những món ăn đặc sắc và dịch vụ chuyên nghiệp.</p>
+                    <div class="mt-4">
+                        <a href="#" class="text-white me-3" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white me-3" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Giờ Mở Cửa</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">Thứ 2 - Thứ 6: 10:00 - 22:00</li>
+                        <li class="mb-2">Thứ 7: 10:00 - 23:00</li>
+                        <li>Chủ Nhật: 10:00 - 22:00</li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="mb-4">Liên Hệ</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</li>
+                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (028) 1234 5678</li>
+                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@delicious.com</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Nhà Hàng Delicious. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.32/dist/sweetalert2.all.min.js"></script>
+    <!-- AOS - Animate On Scroll -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+    <script>
+        // Khởi tạo AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Countdown Timer
+        function updateCountdown() {
+            const eventDate = new Date('December 15, 2023 18:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+            
+            // Tính toán ngày, giờ, phút, giây
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Hiển thị kết quả
+            document.getElementById('days').innerHTML = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerHTML = seconds.toString().padStart(2, '0');
+            
+            // Nếu đã hết thời gian đếm ngược
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                document.getElementById('days').innerHTML = '00';
+                document.getElementById('hours').innerHTML = '00';
+                document.getElementById('minutes').innerHTML = '00';
+                document.getElementById('seconds').innerHTML = '00';
+            }
+        }
+        
+        // Cập nhật đếm ngược mỗi giây
+        updateCountdown();
+        const countdownInterval = setInterval(updateCountdown, 1000);
+        
+        // Xử lý form đăng ký
+        document.getElementById('eventRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const event = document.getElementById('eventSelect').options[document.getElementById('eventSelect').selectedIndex].text;
+            const guests = document.getElementById('guests').value;
+            
+            Swal.fire({
+                title: 'Đăng Ký Thành Công!',
+                html: `
+                    <p>Cảm ơn <strong>${name}</strong> đã đăng ký tham gia sự kiện!</p>
+                    <p>Thông tin đăng ký của bạn:</p>
+                    <ul class="text-start">
+                        <li>Sự kiện: ${event}</li>
+                        <li>Số lượng người: ${guests}</li>
+                        <li>Email: ${email}</li>
+                        <li>Số điện thoại: ${phone}</li>
+                    </ul>
+                    <p>Chúng tôi sẽ liên hệ với bạn để xác nhận thông tin đăng ký.</p>
+                `,
+                icon: 'success',
+                confirmButtonText: 'Đóng',
+                confirmButtonColor: '#e74c3c'
+            });
+            
+            this.reset();
+        });
+    </script>
+</body>
+</html> 
