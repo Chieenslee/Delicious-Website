@@ -5,180 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nhà Hàng Delicious - Thực Đơn</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Animate.css cho hiệu ứng -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- AOS - Animate On Scroll Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #e74c3c;
-            --secondary-color: #2c3e50;
-            --accent-color: #f39c12;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-color);
-        }
-        
-        .navbar {
-            background-color: var(--secondary-color) !important;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
-            color: white;
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .badge {
-            font-weight: 500;
-            padding: 0.35em 0.65em;
-        }
-        
-        .text-primary {
-            color: var(--primary-color) !important;
-        }
-        
-        .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .menu-item {
-            transition: all 0.3s ease;
-            opacity: 1;
-            height: 100%;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            border: none;
-            overflow: hidden;
-        }
-        
-        .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-        
-        .menu-item .card-img-top {
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-            width: 100%;
-        }
-        
-        .menu-item:hover .card-img-top {
-            transform: scale(1.1);
-        }
-        
-        .menu-item .card-body {
-            padding: 1.25rem;
-        }
-        
-        .menu-item .card-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-        
-        .menu-item .card-text {
-            color: #666;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-        
-        .category-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 10px;
-        }
-        
-        .category-title::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-color);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .animate__fadeInUp {
-            opacity: 1;
-            animation-duration: 1s;
-        }
-        
-        footer {
-            background-color: var(--secondary-color) !important;
-        }
-        
-        .btn {
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .menu-item .card-img-top {
-                height: 180px;
-            }
-            
-            .page-header {
-                height: 30vh;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .menu-item .card-img-top {
-                height: 160px;
-            }
-            
-            .page-header {
-                height: 25vh;
-            }
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark p-3 pt-3">
         <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Logo" height="40">
+            <div class="navbar-brand" href="index.html">
+                <img src="images/logo/logo.jpg" alt="Logo" class="logo-image">
                 Delicious
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Trang Chủ</a>
                     </li>
@@ -197,10 +41,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Liên Hệ</a>
                     </li>
+                    <li class="nav-item ms-3">
+                        <a href="cart.html" class="position-relative" id="cartIcon">
+                            <i class="bi bi-cart3 text-white fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item ms-3 text-white fs-5">
+                        <a class="nav-link" href="login.html">
+                            <i class="bi bi-person-circle fs-5"></i>
+                            <span class="ms-1">Đăng Nhập</span>
+                        </a>
+                    </li>
                 </ul>
-                <div class="ms-3">
-                    <a href="index.html#reservation" class="btn btn-primary" aria-label="Đặt bàn">Đặt Bàn</a>
-                </div>
             </div>
         </div>
     </nav>
@@ -208,7 +63,7 @@
     <!-- Page Header -->
     <header class="page-header">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Thực Đơn</h1>
+            <h1 class="display-4 fw-bold">Thực Đơn</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="index.html" class="text-white">Trang Chủ</a></li>
@@ -221,257 +76,207 @@
     <!-- Menu Categories -->
     <section class="py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
+            <div class="text-center mb-5">
                 <h2 class="fw-bold">Khám Phá Thực Đơn Của Chúng Tôi</h2>
                 <p class="lead">Thưởng thức những món ăn đặc sắc được chế biến từ nguyên liệu tươi ngon nhất</p>
             </div>
-            
-            <ul class="nav nav-pills mb-5 justify-content-center" id="menuTab" role="tablist" data-aos="fade-up">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="appetizers-tab" data-bs-toggle="pill" data-bs-target="#appetizers" type="button" role="tab" aria-controls="appetizers" aria-selected="true" aria-describedby="appetizers-heading">Khai Vị</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="main-courses-tab" data-bs-toggle="pill" data-bs-target="#main-courses" type="button" role="tab" aria-controls="main-courses" aria-selected="false" aria-describedby="main-courses-heading">Món Chính</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="seafood-tab" data-bs-toggle="pill" data-bs-target="#seafood" type="button" role="tab" aria-controls="seafood" aria-selected="false" aria-describedby="seafood-heading">Hải Sản</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="desserts-tab" data-bs-toggle="pill" data-bs-target="#desserts" type="button" role="tab" aria-controls="desserts" aria-selected="false" aria-describedby="desserts-heading">Tráng Miệng</button>
-                </li>
-            </ul>
-            
-            <div class="tab-content" id="menuTabContent">
-                <div class="tab-pane fade show active" id="appetizers" role="tabpanel" aria-labelledby="appetizers-tab">
-                    <h3 class="category-title mb-4" id="appetizers-heading">Khai Vị</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Gỏi cuốn">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Gỏi Cuốn Tôm Thịt</h5>
-                                                <span class="text-primary fw-bold">85.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Gỏi cuốn tươi mát với tôm, thịt heo, bún, rau sống và các loại rau thơm, ăn kèm với nước chấm đặc biệt.</p>
-                                        </div>
-                                    </div>
-                                </div>
+        </div>
+    </section>
+
+    <!-- Khai Vị Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Khai Vị</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-1.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Chả giò">
                             </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://i.imgur.com/Qs2uYP6.jpg" class="img-fluid rounded-start h-100" alt="Chả giò">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Chả Giò Hải Sản</h5>
-                                                <span class="text-primary fw-bold">95.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Chả giò giòn rụm với nhân hải sản thơm ngon, ăn kèm với rau sống và nước mắm chua ngọt.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1632778149955-e80f8ceca2e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Gỏi ngó sen">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Gỏi Ngó Sen Tôm Thịt</h5>
-                                                <span class="text-primary fw-bold">120.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Gỏi ngó sen giòn ngọt kết hợp với tôm tươi và thịt heo, trộn với nước sốt chua ngọt đặc biệt.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Súp hải sản">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Súp Hải Sản</h5>
-                                                <span class="text-primary fw-bold">110.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Súp hải sản đậm đà với tôm, mực, cua và các loại rau củ, thích hợp để bắt đầu bữa ăn.</p>
-                                        </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chả Giò Hải Sản</h5>
+                                    <p class="card-text">Chả giò giòn rụm với nhân hải sản thơm ngon, ăn kèm với rau sống và nước mắm chua ngọt.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">95.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="2">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="main-courses" role="tabpanel" aria-labelledby="main-courses-tab">
-                    <h3 class="category-title mb-4" id="main-courses-heading">Món Chính</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Bò lúc lắc">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Bò Lúc Lắc</h5>
-                                                <span class="text-primary fw-bold">220.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Thịt bò thượng hạng xào với ớt chuông và hành tây, ăn kèm với cơm trắng và salad.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-1.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Chả giò">
                             </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Cơm chiên hải sản">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Cơm Chiên Hải Sản</h5>
-                                                <span class="text-primary fw-bold">180.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Cơm chiên với tôm, mực, cua và các loại rau củ, thơm ngon và đầy đủ dinh dưỡng.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Gà nướng">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Gà Nướng Mật Ong</h5>
-                                                <span class="text-primary fw-bold">195.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Gà nướng thơm ngon với lớp mật ong bên ngoài, ăn kèm với rau sống và nước chấm đặc biệt.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1576577445504-6af96477db52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Bún chả">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Bún Chả Hà Nội</h5>
-                                                <span class="text-primary fw-bold">165.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Bún ăn kèm với chả viên và thịt nướng, rau sống và nước mắm chua ngọt đặc trưng của Hà Nội.</p>
-                                        </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chả Giò Hải Sản</h5>
+                                    <p class="card-text">Chả giò giòn rụm với nhân hải sản thơm ngon, ăn kèm với rau sống và nước mắm chua ngọt.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">95.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="2">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="seafood" role="tabpanel" aria-labelledby="seafood-tab">
-                    <h3 class="category-title mb-4" id="seafood-heading">Hải Sản</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Cá hồi nướng">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Cá Hồi Nướng Teriyaki</h5>
-                                                <span class="text-primary fw-bold">250.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Cá hồi tươi nướng với sốt Teriyaki, ăn kèm với rau củ xào và cơm trắng.</p>
-                                        </div>
-                                    </div>
-                                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Món Chính Section -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Món Chính</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-1.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Bò lúc lắc">
                             </div>
-                        </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1579631542720-3a87824fff86?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Tôm hùm">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Tôm Hùm Sốt Bơ Tỏi</h5>
-                                                <span class="text-primary fw-bold">550.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Tôm hùm tươi sống chế biến với sốt bơ tỏi thơm ngon, ăn kèm với cơm trắng và rau củ.</p>
-                                        </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bò Lúc Lắc</h5>
+                                    <p class="card-text">Thịt bò thượng hạng xào với ớt chuông và hành tây, ăn kèm với cơm trắng và salad.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">220.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="3">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade" id="desserts" role="tabpanel" aria-labelledby="desserts-tab">
-                    <h3 class="category-title mb-4" id="desserts-heading">Tráng Miệng</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Bánh flan">
-                                    </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Bánh Flan Caramel</h5>
-                                                <span class="text-primary fw-bold">45.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Bánh flan mềm mịn với lớp caramel ngọt ngào, phục vụ kèm với đá.</p>
-                                        </div>
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-2.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Gà nướng">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Gà Nướng Mật Ong</h5>
+                                    <p class="card-text">Gà nướng thơm ngon với lớp mật ong bên ngoài, ăn kèm với rau sống và nước chấm đặc biệt.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">195.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="4">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                            <div class="card menu-item h-100 border-0 shadow-sm">
-                                <div class="row g-0">
-                                    <div class="col-4">
-                                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Chè">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hải Sản Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Hải Sản</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-3.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Cá hồi nướng">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Cá Hồi Nướng Teriyaki</h5>
+                                    <p class="card-text">Cá hồi tươi nướng với sốt Teriyaki, ăn kèm với rau củ xào và cơm trắng.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">250.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="5">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
-                                    <div class="col-8">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <h5 class="card-title">Chè Hạt Sen</h5>
-                                                <span class="text-primary fw-bold">55.000 VNĐ</span>
-                                            </div>
-                                            <p class="card-text">Chè hạt sen thơm ngon với nước cốt dừa béo ngậy, phục vụ nóng hoặc lạnh tùy thích.</p>
-                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-3.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Tôm hùm">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Tôm Hùm Sốt Bơ Tỏi</h5>
+                                    <p class="card-text">Tôm hùm tươi sống chế biến với sốt bơ tỏi thơm ngon, ăn kèm với cơm trắng và rau củ.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">550.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="6">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tráng Miệng Section -->
+    <section class="py-5">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Tráng Miệng</h3>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/images-1.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Bánh flan">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Bánh Flan Caramel</h5>
+                                    <p class="card-text">Bánh flan mềm mịn với lớp caramel ngọt ngào, phục vụ kèm với đá.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">45.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="7">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card menu-item h-100 border-0 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-4">
+                                <img src="images/menu/dessert2.jpg" class="img-fluid rounded-start h-100 object-fit-cover" alt="Chè hạt sen">
+                            </div>
+                            <div class="col-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Chè Hạt Sen</h5>
+                                    <p class="card-text">Chè hạt sen thơm ngon với nước cốt dừa béo ngậy, phục vụ nóng hoặc lạnh tùy thích.</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <p class="text-primary fw-bold mb-0">55.000 VNĐ</p>
+                                        <button class="btn btn-outline-primary add-to-cart" data-id="8">
+                                            <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -493,7 +298,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="card menu-item h-100 border-0 shadow">
-                        <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Cá hồi nướng phô mai">
+                        <img src="images/menu/images-1.jpg" class="card-img-top" alt="Cá hồi nướng phô mai">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="card-title mb-0">Cá Hồi Nướng Phô Mai</h5>
@@ -502,14 +307,16 @@
                             <p class="card-text">Cá hồi tươi nướng với lớp phô mai béo ngậy bên trên, ăn kèm với rau củ và sốt đặc biệt.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-primary fw-bold">250.000 VNĐ</span>
-                                <button class="btn btn-sm btn-outline-primary order-btn" aria-label="Đặt món Cá hồi nướng phô mai">Đặt món</button>
+                                <button class="btn btn-outline-primary add-to-cart" data-id="1">
+                                    <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="card menu-item h-100 border-0 shadow">
-                        <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" class="card-img-top" alt="Bò Wagyu">
+                        <img src="images/menu/images-1.jpg" class="card-img-top" alt="Bò Wagyu">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="card-title mb-0">Bò Wagyu Nướng</h5>
@@ -518,14 +325,16 @@
                             <p class="card-text">Thịt bò Wagyu thượng hạng nướng tới mức hoàn hảo, ăn kèm với khoai tây nghiền và rau củ.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-primary fw-bold">450.000 VNĐ</span>
-                                <button class="btn btn-sm btn-outline-primary order-btn" aria-label="Đặt món Bò Wagyu">Đặt món</button>
+                                <button class="btn btn-outline-primary add-to-cart" data-id="1">
+                                    <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="card menu-item h-100 border-0 shadow">
-                        <img src="https://images.unsplash.com/photo-1599021419847-d8a7a6aba5b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80" class="card-img-top" alt="Tôm hùm">
+                        <img src="images/menu/images-1.jpg" class="card-img-top" alt="Tôm hùm">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center mb-2">
                                 <h5 class="card-title mb-0">Tôm Hùm Sốt Bơ Tỏi</h5>
@@ -534,56 +343,9 @@
                             <p class="card-text">Tôm hùm tươi sống chế biến với sốt bơ tỏi thơm ngon, ăn kèm với cơm trắng và rau củ.</p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <span class="text-primary fw-bold">550.000 VNĐ</span>
-                                <button class="btn btn-sm btn-outline-primary order-btn" aria-label="Đặt món Tôm hùm">Đặt món</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tráng Miệng -->
-    <section class="py-5">
-        <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold" id="dessert-section-heading">Tráng Miệng</h2>
-                <p class="lead">Kết thúc bữa ăn với những món tráng miệng ngọt ngào</p>
-            </div>
-            
-            <div class="row g-4">
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card menu-item h-100 border-0 shadow-sm">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Bánh flan">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="card-title">Bánh Flan Caramel</h5>
-                                        <span class="text-primary fw-bold">45.000 VNĐ</span>
-                                    </div>
-                                    <p class="card-text">Bánh flan mềm mịn với lớp caramel ngọt ngào, phục vụ kèm với đá.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card menu-item h-100 border-0 shadow-sm">
-                        <div class="row g-0">
-                            <div class="col-4">
-                                <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80" class="img-fluid rounded-start h-100" alt="Chè hạt sen">
-                            </div>
-                            <div class="col-8">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between">
-                                        <h5 class="card-title">Chè Hạt Sen</h5>
-                                        <span class="text-primary fw-bold">55.000 VNĐ</span>
-                                    </div>
-                                    <p class="card-text">Chè hạt sen thơm ngon với nước cốt dừa béo ngậy, phục vụ nóng hoặc lạnh tùy thích.</p>
-                                </div>
+                                <button class="btn btn-outline-primary add-to-cart" data-id="1">
+                                    <i class="bi bi-cart-plus"></i> Thêm vào giỏ
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -593,17 +355,25 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-white py-5">
+    <footer class="text-white py-5 bg-dark">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h5 class="mb-4">Nhà Hàng Delicious</h5>
                     <p>Mang đến trải nghiệm ẩm thực tuyệt vời với những món ăn đặc sắc và dịch vụ chuyên nghiệp.</p>
                     <div class="mt-4">
-                        <a href="#" class="text-white me-3" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white me-3" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white" title="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -617,76 +387,31 @@
                 <div class="col-lg-4">
                     <h5 class="mb-4">Liên Hệ</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (028) 1234 5678</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@delicious.com</li>
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i> 123 Đường ABC, Quận XYZ, Hà Nội
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i> (028) 1234 5678
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> info@delicious.com
+                        </li>
                     </ul>
                 </div>
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p class="mb-0">&copy; 2023 Nhà Hàng Delicious. All rights reserved.</p>
+                <p class="mb-0">2025 Nhà Hàng Delicious. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- AOS - Animate On Scroll -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    <script>
-        // Khởi tạo AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-        
-        // Xử lý nút đặt món
-        $('.order-btn').click(function() {
-            var dishName = $(this).closest('.card-body').find('.card-title').text();
-            alert('Bạn đã đặt món: ' + dishName + '\nMón ăn sẽ được chuẩn bị và phục vụ trong thời gian sớm nhất!');
-        });
-        
-        // Loại bỏ tự động chuyển tab vì có thể gây khó chịu cho người dùng
-        // và ảnh hưởng đến khả năng truy cập
-        
-        // Hiệu ứng hiển thị món ăn khi scroll
-        $(window).scroll(function() {
-            var windowHeight = $(window).height();
-            var scrollTop = $(window).scrollTop();
-            
-            $('.menu-item').each(function() {
-                var offsetTop = $(this).offset().top;
-                
-                if (scrollTop + windowHeight > offsetTop) {
-                    $(this).addClass('animate__animated animate__fadeInUp');
-                }
-            });
-        });
-        
-        // Tìm kiếm món ăn
-        // Thêm ô tìm kiếm vào đầu trang
-        $('.container:first').append('<div class="search-container text-center mb-4 mt-3"><input type="text" id="searchMenu" class="form-control w-50 mx-auto" placeholder="Tìm kiếm món ăn" aria-label="Tìm kiếm món ăn"></div>');
-        
-        // Xử lý chức năng tìm kiếm
-        $('#searchMenu').on('keyup', function() {
-            var searchText = $(this).val().toLowerCase();
-            
-            $('.menu-item').each(function() {
-                var dishName = $(this).find('.card-title').text().toLowerCase();
-                var dishDesc = $(this).find('.card-text').text().toLowerCase();
-                
-                if (dishName.indexOf(searchText) > -1 || dishDesc.indexOf(searchText) > -1) {
-                    $(this).parent().show();
-                } else {
-                    $(this).parent().hide();
-                }
-            });
-        });
-    </script>
+    <script src="js/cart.js"></script>
 </body>
 </html> 

@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhà Hàng Delicious - Giới Thiệu</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+    <title>Đăng Nhập - Nhà Hàng Delicious</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -27,7 +25,7 @@
                         <a class="nav-link" href="index.html">Trang Chủ</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="about.html">Giới Thiệu</a>
+                        <a class="nav-link" href="about.html">Giới Thiệu</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="menu.html">Thực Đơn</a>
@@ -50,7 +48,7 @@
                         </a>
                     </li>
                     <li class="nav-item ms-3 text-white fs-5">
-                        <a class="nav-link" href="login.html">
+                        <a class="nav-link active" href="login.html">
                             <i class="bi bi-person-circle fs-5"></i>
                             <span class="ms-1">Đăng Nhập</span>
                         </a>
@@ -59,72 +57,82 @@
             </div>
         </div>
     </nav>
-
     <!-- Page Header -->
     <header class="page-header">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold">Về Chúng Tôi</h1>
+            <h1 class="display-4 fw-bold">Đăng Nhập</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="index.html" class="text-white">Trang Chủ</a></li>
-                    <li class="breadcrumb-item active text-white" aria-current="page">Giới Thiệu</li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Đăng Nhập</li>
                 </ol>
             </nav>
         </div>
     </header>
 
-    <!-- Our Story -->
+    <!-- Login Section -->
     <section class="py-5">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="images/about/images-2.jpg" alt="Câu chuyện của chúng tôi" class="story-img">
-                </div>
-                <div class="col-lg-6">
-                    <h2 class="fw-bold mb-4">Câu Chuyện Của Chúng Tôi</h2>
-                    <p class="lead">Nhà hàng Delicious được thành lập vào năm 2010 với mong muốn mang đến trải nghiệm ẩm thực tuyệt vời nhất cho thực khách.</p>
-                    <p>Bắt đầu từ một quán ăn nhỏ, chúng tôi đã không ngừng phát triển và hoàn thiện để trở thành một trong những nhà hàng được yêu thích nhất tại thành phố. Với đội ngũ đầu bếp tài năng và nhân viên chuyên nghiệp, chúng tôi cam kết mang đến những món ăn ngon miệng và dịch vụ tận tâm.</p>
-                    <p>Triết lý của chúng tôi là sử dụng những nguyên liệu tươi ngon nhất, kết hợp với bí quyết nấu ăn truyền thống và hiện đại để tạo ra những món ăn độc đáo, đáp ứng khẩu vị của mọi thực khách.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    <section class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center fw-bold mb-5">Tại Sao Chọn Chúng Tôi</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-4">
-                                <i class="bi bi-egg-fried fs-1 text-primary"></i>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card shadow">
+                        <div class="card-body p-5">
+                            <ul class="nav nav-tabs mb-4" id="loginTabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" aria-controls="login" aria-selected="true">Đăng Nhập</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" aria-controls="register" aria-selected="false">Đăng Ký</button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content">
+                                <!-- Đăng nhập -->
+                                <div class="tab-pane fade show active" id="login">
+                                    <form id="loginForm">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="loginEmail">Email</label>
+                                            <input type="email" class="form-control" id="loginEmail" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="loginPassword">Mật khẩu</label>
+                                            <input type="password" class="form-control" id="loginPassword" required>
+                                        </div>
+                                        <div class="mb-3 form-check">
+                                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Ghi nhớ đăng nhập</label>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Đăng Nhập</button>
+                                    </form>
+                                </div>
+                                
+                                <!-- Đăng ký -->
+                                <div class="tab-pane fade" id="register">
+                                    <form id="registerForm">
+                                        <div class="mb-3">
+                                            <label class="form-label" for="registerName">Họ và tên</label>
+                                            <input type="text" class="form-control" id="registerName" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="registerEmail">Email</label>
+                                            <input type="email" class="form-control" id="registerEmail" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="registerPhone">Số điện thoại</label>
+                                            <input type="tel" class="form-control" id="registerPhone" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="registerPassword">Mật khẩu</label>
+                                            <input type="password" class="form-control" id="registerPassword" required>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label" for="confirmPassword">Xác nhận mật khẩu</label>
+                                            <input type="password" class="form-control" id="confirmPassword" required>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary w-100">Đăng Ký</button>
+                                    </form>
+                                </div>
                             </div>
-                            <h4 class="card-title">Món Ăn Chất Lượng</h4>
-                            <p class="card-text">Chúng tôi chỉ sử dụng những nguyên liệu tươi ngon nhất và được chọn lọc kỹ càng để đảm bảo chất lượng món ăn.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-4">
-                                <i class="bi bi-people fs-1 text-primary"></i>
-                            </div>
-                            <h4 class="card-title">Đội Ngũ Chuyên Nghiệp</h4>
-                            <p class="card-text">Đội ngũ nhân viên được đào tạo chuyên nghiệp, luôn sẵn sàng phục vụ quý khách với thái độ nhiệt tình và chu đáo.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body text-center p-4">
-                            <div class="mb-4">
-                                <i class="bi bi-building fs-1 text-primary"></i>
-                            </div>
-                            <h4 class="card-title">Không Gian Sang Trọng</h4>
-                            <p class="card-text">Không gian nhà hàng được thiết kế tinh tế, sang trọng, tạo cảm giác thoải mái và ấm cúng cho thực khách.</p>
                         </div>
                     </div>
                 </div>
@@ -190,5 +198,6 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/auth.js"></script>
 </body>
-</html>
+</html> 

@@ -149,63 +149,6 @@ $(document).ready(function() {
         $('.hero-section, .page-header').css('background-position', 'center ' + (scrollTop * 0.5) + 'px');
     });
     
-    // Hiệu ứng đếm ngược cho sự kiện đặc biệt
-    if ($('.hero-section').length) {
-        // Thêm HTML cho countdown
-        $('.hero-section .container').append('<div class="countdown-container mt-4"><h4 class="text-white animate__animated animate__fadeInUp">Sự kiện đặc biệt sắp diễn ra:</h4><div id="countdown" class="d-flex justify-content-center"></div></div>');
-        
-        // Thiết lập ngày đếm ngược (1 tháng từ ngày hiện tại)
-        var countDownDate = new Date();
-        countDownDate.setMonth(countDownDate.getMonth() + 1);
-        
-        // Cập nhật đếm ngược mỗi 1 giây
-        var x = setInterval(function() {
-            // Lấy thời gian hiện tại
-            var now = new Date().getTime();
-            
-            // Tính thời gian còn lại
-            var distance = countDownDate - now;
-            
-            // Tính toán ngày, giờ, phút, giây
-            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            // Hiển thị kết quả
-            document.getElementById("countdown").innerHTML = 
-                '<div class="countdown-item mx-2 p-3 bg-white text-dark rounded animate__animated animate__fadeInUp"><span class="h3 d-block">' + days + '</span>Ngày</div>' +
-                '<div class="countdown-item mx-2 p-3 bg-white text-dark rounded animate__animated animate__fadeInUp" style="animation-delay: 0.2s"><span class="h3 d-block">' + hours + '</span>Giờ</div>' +
-                '<div class="countdown-item mx-2 p-3 bg-white text-dark rounded animate__animated animate__fadeInUp" style="animation-delay: 0.4s"><span class="h3 d-block">' + minutes + '</span>Phút</div>' +
-                '<div class="countdown-item mx-2 p-3 bg-white text-dark rounded animate__animated animate__fadeInUp" style="animation-delay: 0.6s"><span class="h3 d-block">' + seconds + '</span>Giây</div>';
-            
-            // Nếu đếm ngược kết thúc
-            if (distance < 0) {
-                clearInterval(x);
-                document.getElementById("countdown").innerHTML = "Sự kiện đã bắt đầu!";
-            }
-        }, 1000);
-    }
-    
-    // Hiệu ứng typing cho tiêu đề trang chủ
-    if ($('.hero-section').length) {
-        var text = $('.hero-section h1').text();
-        $('.hero-section h1').text('');
-        
-        var i = 0;
-        var speed = 100;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                $('.hero-section h1').text($('.hero-section h1').text() + text.charAt(i));
-                i++;
-                setTimeout(typeWriter, speed);
-            }
-        }
-        
-        // Bắt đầu hiệu ứng typing sau khi trang đã tải xong
-        setTimeout(typeWriter, 1000);
-    }
     
     // Xử lý nút đặt món trong trang menu
     $('.order-btn').click(function() {
@@ -255,31 +198,6 @@ $(document).ready(function() {
         this.reset();
     });
     
-    // Tự động chuyển tab sau mỗi 5 giây trong trang menu
-    if ($('#menuTab').length) {
-        var tabCycle;
-        
-        function startTabCycle() {
-            var tabs = $('#menuTab .nav-link');
-            var activeIndex = tabs.index($('#menuTab .nav-link.active'));
-            
-            tabCycle = setInterval(function() {
-                activeIndex = (activeIndex + 1) % tabs.length;
-                tabs.eq(activeIndex).click();
-            }, 5000);
-        }
-        
-        // Bắt đầu chu kỳ chuyển tab
-        startTabCycle();
-        
-        // Dừng chu kỳ khi người dùng tương tác với tab
-        $('#menuTab .nav-link').click(function() {
-            clearInterval(tabCycle);
-            // Khởi động lại sau 10 giây không tương tác
-            setTimeout(startTabCycle, 10000);
-        });
-    }
-    
     // Thêm hiệu ứng cho các phần tử khi scroll
     function animateOnScroll() {
         $('.animate-on-scroll').each(function() {
@@ -298,17 +216,4 @@ $(document).ready(function() {
     
     $(window).scroll(animateOnScroll);
     animateOnScroll();
-    
-    // Thêm hiệu ứng preloader
-    $(window).on('load', function() {
-        $('#preloader').fadeOut('slow', function() {
-            $(this).remove();
-        });
-    });
-    
-    // Thêm preloader HTML vào body
-    $('body').prepend('<div id="preloader"><div class="spinner"></div></div>');
-    
-    // Thêm CSS cho preloader
-    $('<style>#preloader{position:fixed;top:0;left:0;right:0;bottom:0;background-color:#fff;z-index:9999}.spinner{width:40px;height:40px;position:absolute;top:50%;left:50%;margin-top:-20px;margin-left:-20px;border:4px solid #f3f3f3;border-top:4px solid #e74c3c;border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}</style>').appendTo('head');
 }); 

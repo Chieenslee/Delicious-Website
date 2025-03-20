@@ -5,168 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nhà Hàng Delicious - Liên Hệ</title>
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <!-- Animate.css cho hiệu ứng -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- AOS - Animate On Scroll Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #e74c3c;
-            --secondary-color: #2c3e50;
-            --accent-color: #f39c12;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--dark-color);
-        }
-        
-        .navbar {
-            background-color: var(--secondary-color) !important;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: #c0392b;
-            border-color: #c0392b;
-        }
-        
-        .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 40vh;
-            display: flex;
-            align-items: center;
-            color: white;
-        }
-        
-        .contact-info-item {
-            transition: transform 0.3s;
-        }
-        
-        .contact-info-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .animate__fadeInUp {
-            opacity: 1;
-            animation-duration: 1s;
-        }
-        
-        .bg-light {
-            background-color: var(--light-color) !important;
-        }
-        
-        .rounded-circle.bg-primary {
-            background-color: var(--primary-color) !important;
-        }
-        
-        footer {
-            background-color: var(--secondary-color) !important;
-        }
-        
-        /* Hiệu ứng cho form */
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 0.25rem rgba(231, 76, 60, 0.25);
-        }
-        
-        /* Hiệu ứng cho nút */
-        .btn {
-            transition: all 0.3s ease;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Icon container styles */
-        .icon-container {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            background-color: rgba(231, 76, 60, 0.1);
-            margin-bottom: 1rem;
-        }
-        
-        /* Map iframe style */
-        .map-iframe {
-            border: 0;
-        }
-        
-        /* Restaurant image style */
-        .restaurant-img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        @media (max-width: 768px) {
-            .restaurant-img {
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 576px) {
-            .restaurant-img {
-                height: 250px;
-            }
-        }
-    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="https://img.icons8.com/color/48/000000/restaurant.png" alt="Logo" height="40">
-                Delicious
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Trang Chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">Giới Thiệu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html">Thực Đơn</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Liên Hệ</a>
-                    </li>
-                </ul>
-                <div class="ms-3">
-                    <a href="index.html#reservation" class="btn btn-primary">Đặt Bàn</a>
-                </div>
-            </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top bg-dark p-3 pt-3">
+    <div class="container">
+        <div class="navbar-brand" href="index.html">
+            <img src="images/logo/logo.jpg" alt="Logo" class="logo-image">
+            Delicious
         </div>
-    </nav>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" title="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Trang Chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">Giới Thiệu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">Thực Đơn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="gallery.html">Thư Viện Ảnh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="events.html">Sự Kiện</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="contact.html">Liên Hệ</a>
+                </li>
+                <li class="nav-item ms-3">
+                    <a href="cart.html" class="position-relative" id="cartIcon">
+                        <i class="bi bi-cart3 text-white fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-count">
+                            0
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item ms-3 text-white fs-5">
+                    <a class="nav-link" href="login.html">
+                        <i class="bi bi-person-circle fs-5"></i>
+                        <span class="ms-1">Đăng Nhập</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
     <!-- Page Header -->
     <header class="page-header">
         <div class="container text-center">
-            <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Liên Hệ</h1>
+            <h1 class="display-4 fw-bold">Liên Hệ</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                     <li class="breadcrumb-item"><a href="index.html" class="text-white">Trang Chủ</a></li>
@@ -176,137 +73,127 @@
         </div>
     </header>
 
-    <!-- Contact Info -->
+    <!-- Contact Info Section -->
     <section class="py-5">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold">Thông Tin Liên Hệ</h2>
-                <p class="lead">Hãy liên hệ với chúng tôi nếu bạn có bất kỳ câu hỏi nào</p>
-            </div>
-            
             <div class="row g-4">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card h-100 border-0 shadow-sm text-center p-4">
-                        <div class="icon-container mx-auto mb-3">
-                            <i class="fas fa-map-marker-alt fa-2x text-primary"></i>
-                        </div>
-                        <h5 class="card-title">Địa Chỉ</h5>
-                        <p class="card-text">123 Đường ABC, Quận XYZ<br>TP. Hồ Chí Minh</p>
+                <div class="col-md-4">
+                    <div class="contact-info-box text-center p-4">
+                        <i class="bi bi-geo-alt display-4 text-primary mb-3"></i>
+                        <h4>Địa Chỉ</h4>
+                        <p class="mb-0">123 Đường ABC, Quận XYZ<br>TP. Hồ Chí Minh</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card h-100 border-0 shadow-sm text-center p-4">
-                        <div class="icon-container mx-auto mb-3">
-                            <i class="fas fa-phone fa-2x text-primary"></i>
-                        </div>
-                        <h5 class="card-title">Điện Thoại</h5>
-                        <p class="card-text">(028) 1234 5678<br>0901 234 567</p>
+                <div class="col-md-4">
+                    <div class="contact-info-box text-center p-4">
+                        <i class="bi bi-telephone display-4 text-primary mb-3"></i>
+                        <h4>Điện Thoại</h4>
+                        <p class="mb-0">(028) 1234 5678<br>0123 456 789</p>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card h-100 border-0 shadow-sm text-center p-4">
-                        <div class="icon-container mx-auto mb-3">
-                            <i class="fas fa-envelope fa-2x text-primary"></i>
-                        </div>
-                        <h5 class="card-title">Email</h5>
-                        <p class="card-text">info@delicious.com<br>support@delicious.com</p>
+                <div class="col-md-4">
+                    <div class="contact-info-box text-center p-4">
+                        <i class="bi bi-envelope display-4 text-primary mb-3"></i>
+                        <h4>Email</h4>
+                        <p class="mb-0">info@delicious.com<br>support@delicious.com</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Form & Map -->
+    <!-- Contact Form Section -->
     <section class="py-5 bg-light">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="fw-bold">Gửi Tin Nhắn</h2>
-                <p class="lead">Hãy để lại thông tin, chúng tôi sẽ liên hệ lại với bạn sớm nhất</p>
-            </div>
-            
-            <div class="row g-5">
-                <div class="col-lg-6" data-aos="fade-right">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Gửi Tin Nhắn Cho Chúng Tôi</h2>
                     <form id="contactForm">
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="name" class="form-label">Họ và tên</label>
-                                <input type="text" class="form-control" id="name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="phone" class="form-label">Số điện thoại</label>
-                                <input type="tel" class="form-control" id="phone">
-                            </div>
-                            <div class="col-md-6">
-                                <label for="subject" class="form-label">Chủ đề</label>
-                                <input type="text" class="form-control" id="subject" required>
-                            </div>
-                            <div class="col-12">
-                                <label for="message" class="form-label">Tin nhắn</label>
-                                <textarea class="form-control" id="message" rows="5" required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary">Gửi Tin Nhắn</button>
-                            </div>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" required>
                         </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Chủ đề</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Tin nhắn</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-send me-2"></i>Gửi Tin Nhắn
+                        </button>
                     </form>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="ratio ratio-16x9">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.4946681007846!2d106.69908867469967!3d10.771913089387625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f4670702e31%3A0xa5777fb3a5bb9972!2sBen%20Thanh%20Market!5e0!3m2!1sen!2s!4v1701234567890!5m2!1sen!2s" class="map-iframe" allowfullscreen="" referrerpolicy="no-referrer-when-downgrade" title="Bản đồ vị trí Nhà Hàng Delicious"></iframe>
+                <div class="col-lg-6">
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.325247630613!2d106.66372671474925!3d10.786840192314456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752ed23c80767d%3A0x5a981a5efee9fd7d!2zNTkwIEPDoWNoIE3huqFuZyBUaMOhbmcgVMOhbSwgUGjGsOG7nW5nIDExLCBRdeG6rW4gMywgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1635825773795!5m2!1svi!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Opening Hours -->
+    <!-- Opening Hours Section -->
     <section class="py-5">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-                    <h3 class="fw-bold mb-4">Giờ Mở Cửa</h3>
-                    <table class="table table-borderless">
-                        <tbody>
-                            <tr>
-                                <td class="fw-bold">Thứ Hai - Thứ Sáu</td>
-                                <td>10:00 - 22:00</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-bold">Thứ Bảy</td>
-                                <td>10:00 - 23:00</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-bold">Chủ Nhật</td>
-                                <td>10:00 - 22:00</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <p class="mt-4">Chúng tôi luôn sẵn sàng phục vụ quý khách vào các ngày lễ với giờ mở cửa đặc biệt. Vui lòng liên hệ trước để biết thêm chi tiết.</p>
-                    <a href="index.html#reservation" class="btn btn-primary mt-3">Đặt Bàn Ngay</a>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-4">Giờ Mở Cửa</h2>
+                    <div class="opening-hours">
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Thứ 2 - Thứ 6</span>
+                            <span>10:00 - 22:00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3">
+                            <span>Thứ 7</span>
+                            <span>10:00 - 23:00</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Chủ Nhật</span>
+                            <span>10:00 - 22:00</span>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h4 class="fw-bold mb-3">Đặt Bàn</h4>
+                        <p>Hãy gọi cho chúng tôi để đặt bàn hoặc đặt tiệc:</p>
+                        <a href="tel:(028)12345678" class="btn btn-primary">
+                            <i class="bi bi-telephone me-2"></i>(028) 1234 5678
+                        </a>
+                    </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Nhà hàng" class="restaurant-img">
+                <div class="col-lg-6">
+                    <img src="images/restaurant-interior.jpg" alt="Nhà hàng Delicious" class="img-fluid rounded">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="text-white py-5">
+    <footer class="text-white py-5 bg-dark">
         <div class="container">
             <div class="row g-4">
                 <div class="col-lg-4">
                     <h5 class="mb-4">Nhà Hàng Delicious</h5>
                     <p>Mang đến trải nghiệm ẩm thực tuyệt vời với những món ăn đặc sắc và dịch vụ chuyên nghiệp.</p>
                     <div class="mt-4">
-                        <a href="#" class="text-white me-3" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white me-3" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-white" title="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-white me-3" title="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" title="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+                        <a href="#" class="text-white me-3" title="Twitter">
+                            <i class="bi bi-twitter"></i>
+                        </a>
+                        <a href="#" class="text-white" title="YouTube">
+                            <i class="bi bi-youtube"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -320,33 +207,31 @@
                 <div class="col-lg-4">
                     <h5 class="mb-4">Liên Hệ</h5>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP. Hồ Chí Minh</li>
-                        <li class="mb-2"><i class="fas fa-phone me-2"></i> (028) 1234 5678</li>
-                        <li class="mb-2"><i class="fas fa-envelope me-2"></i> info@delicious.com</li>
+                        <li class="mb-2">
+                            <i class="bi bi-geo-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP. Hà Nội
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-telephone me-2"></i> (028) 1234 5678
+                        </li>
+                        <li class="mb-2">
+                            <i class="bi bi-envelope me-2"></i> info@delicious.com
+                        </li>
                     </ul>
                 </div>
             </div>
             <hr class="my-4">
             <div class="text-center">
-                <p class="mb-0">&copy; 2023 Nhà Hàng Delicious. All rights reserved.</p>
+                <p class="mb-0">2025 Nhà Hàng Delicious. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <!-- AOS - Animate On Scroll -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
-    <script>
-        // Khởi tạo AOS
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
+    <script src="js/cart.js"></script>
 </body>
 </html> 
