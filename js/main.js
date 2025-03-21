@@ -1,15 +1,15 @@
 $(document).ready(function() {
-    // Đảm bảo các menu-item hiển thị đúng cách
+
     $('.menu-item').addClass('animate__animated animate__fadeInUp');
     
-    // Đảm bảo các team-member hiển thị đúng cách
+
     $('.team-member').addClass('animate__animated animate__fadeInUp');
     
-    // Xử lý form đặt bàn
+
     $('#reservationForm').submit(function(e) {
         e.preventDefault();
         
-        // Lấy dữ liệu từ form
+
         var name = $('#name').val();
         var phone = $('#phone').val();
         var date = $('#date').val();
@@ -17,7 +17,7 @@ $(document).ready(function() {
         var guests = $('#guests').val();
         var email = $('#email').val();
         
-        // Hiển thị thông báo xác nhận
+
         Swal.fire({
             title: 'Đặt bàn thành công!',
             html: `Cảm ơn <b>${name}</b> đã đặt bàn!<br>Chúng tôi sẽ liên hệ với bạn qua số điện thoại <b>${phone}</b> để xác nhận.`,
@@ -26,19 +26,19 @@ $(document).ready(function() {
             confirmButtonColor: '#e74c3c'
         });
         
-        // Reset form
+
         this.reset();
     });
     
-    // Xử lý form liên hệ
+
     $('#contactForm').submit(function(e) {
         e.preventDefault();
         
-        // Lấy dữ liệu từ form
+
         var name = $('#name').val();
         var email = $('#email').val();
         
-        // Hiển thị thông báo xác nhận
+
         Swal.fire({
             title: 'Gửi tin nhắn thành công!',
             html: `Cảm ơn <b>${name}</b> đã gửi tin nhắn!<br>Chúng tôi sẽ phản hồi qua email <b>${email}</b> trong thời gian sớm nhất.`,
@@ -47,11 +47,11 @@ $(document).ready(function() {
             confirmButtonColor: '#e74c3c'
         });
         
-        // Reset form
+
         this.reset();
     });
     
-    // Hiệu ứng counter cho số liệu thống kê
+
     function startCounter() {
         $('.counter').each(function() {
             var $this = $(this);

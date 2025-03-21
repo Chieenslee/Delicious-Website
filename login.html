@@ -198,6 +198,20 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
-    <script src="js/auth.js"></script>
+    <script>
+        $(document).ready(function() {
+          $('#loginForm').on('submit', function(e) {
+            e.preventDefault();
+            
+            var email = $('#loginEmail').val();
+            var password = $('#loginPassword').val();
+            if (email === 'admin@gmail.com' && password === '0000') {
+              window.location.href = 'admin-customers.html';
+            } else {
+              alert('Email hoặc mật khẩu không đúng!');
+            }
+          });
+        });
+    </script>
 </body>
 </html> 
